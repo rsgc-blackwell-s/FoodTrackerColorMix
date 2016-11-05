@@ -40,9 +40,13 @@
                                         </connections>
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-jm-0OG">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ual-jm-0OG" secondAttribute="height" multiplier="1:1" id="vXI-ni-ZVR"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vsS-ln-She" appends="YES" id="02m-mP-wn4"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -62,9 +66,15 @@
                         <outlet property="mealNameLabel" destination="aq4-DI-rTt" id="4g8-v4-Tqf"/>
                         <outlet property="nameTextField" destination="u9v-HL-03v" id="w3X-Va-01j"/>
                         <outlet property="photoImageView" destination="Ual-jm-0OG" id="o7w-vk-aS0"/>
+                        <outlet property="selectImageFromPhotoLibrary" destination="vsS-ln-She" id="y9a-GJ-GXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vsS-ln-She">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="92C-3z-GAT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="105.97826086956522"/>
         </scene>
