@@ -27,6 +27,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
+        
+        // Enable the Save button only if the text field has a valid Meal name.
+        checkValidMealName()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +37,27 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Dispose of any resources that can be recreated.
     }
 // MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
         return true
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        // new line will go here
+        checkValidMealName()
+        navigationItem.title = textField.text
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the save button while editing.
+        saveButton.isEnabled = false
+    }
+    
+    func checkValidMealName(){
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 // MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
