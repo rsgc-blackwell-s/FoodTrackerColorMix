@@ -106,22 +106,28 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ANo-9Y-9w1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="BEU-Mu-g8A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ANo-9Y-9w1" secondAttribute="trailing" id="SYb-Fo-6sK"/>
-                            <constraint firstItem="ANo-9Y-9w1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="YzM-GU-uyw"/>
                             <constraint firstItem="ANo-9Y-9w1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dfq-ki-O4o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="huH-Qm-ZZJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1UV-g7-3HN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="15Z-Iw-PRe"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="15Z-Iw-PRe">
+                            <connections>
+                                <segue destination="Dkk-1F-zmz" kind="unwind" unwindAction="unwindToMealListWithSender:" id="qFD-Rq-tMM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="u9v-HL-03v" id="w3X-Va-01j"/>
                         <outlet property="photoImageView" destination="Ual-jm-0OG" id="o7w-vk-aS0"/>
                         <outlet property="ratingControl" destination="W9m-ea-dx8" id="HeF-9e-CBf"/>
+                        <outlet property="saveButton" destination="15Z-Iw-PRe" id="rj8-gp-mSa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Dkk-1F-zmz" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="vsS-ln-She">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="92C-3z-GAT"/>
