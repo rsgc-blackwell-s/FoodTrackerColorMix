@@ -15,13 +15,19 @@ class RatingControl: UIView {
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         button.backgroundColor = UIColor.red
+        button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchDown)
         addSubview(button)
     }
+    
     // NOTE: intrinsicSize is now a computed property
     override public var intrinsicContentSize: CGSize {
         get {
             // Return the intrinsic content size for the stack view so it knows how to layout the button
             return CGSize (width: 240, height: 44)
         }
+    }
+    // MARK: Button Action
+    func ratingButtonTapped (button: UIButton){
+        print ("Button pressed 👍")
     }
 }
