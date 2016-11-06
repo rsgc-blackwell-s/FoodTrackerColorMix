@@ -13,8 +13,18 @@ class RatingControl: UIView {
     var rating = 0
     var ratingButtons = [UIButton]()
     // MARK: Initialization
+    override func layoutSubviews(){
+        var buttonFrame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        
+        // Offset each button's origin by the length of the button plus spacing.
+        for (index, button) in ratingButtons.enumerated(){
+            buttonFrame.origin.x = CGFloat(index * (44+5))
+            button.frame = buttonFrame
+        }
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         for _ in 0..<5 {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         button.backgroundColor = UIColor.red
