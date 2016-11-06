@@ -9,16 +9,18 @@
 import UIKit
 
 class RatingControl: UIView {
+    
     // MARK: Properties
-    var rating = 0
-    var ratingButtons = [UIButton]()
-    let spacing = 5
-    let starCount = 5
+    
     var rating = 0 {
         didSet {
             setNeedsLayout()
         }
     }
+    var ratingButtons = [UIButton]()
+    let spacing = 5
+    let starCount = 5
+    
     
     // MARK: Initialization
     
@@ -52,7 +54,7 @@ class RatingControl: UIView {
         
         // Offset each button's origin by the length of the button plus spacing.
         for (index, button) in ratingButtons.enumerated(){
-            buttonFrame.origin.x = CGFloat(index * (buttonSize + 5))
+            buttonFrame.origin.x = CGFloat(index * (buttonSize + spacing))
             button.frame = buttonFrame
         }
         updateButtonSelectionStates()
