@@ -63,9 +63,11 @@ class RatingControl: UIView {
     // NOTE: intrinsicSize is now a computed property
     override public var intrinsicContentSize: CGSize {
             let buttonSize = Int(frame.size.height)
-            let width = (buttonSize * starCount) + (spacing * (starCount - 1))
-            // Return the intrinsic content size for the stack view so it knows how to layout the button
-            return CGSize (width: width, height: buttonSize)
+            //let width = (buttonSize * starCount) + (spacing * (starCount - 1))
+            let width = (buttonSize + spacing) * starCount
+        
+        // Return the intrinsic content size for the stack view so it knows how to layout the button
+            return CGSize (width: width, height: 44)
     }
     
     // MARK: Button Action
