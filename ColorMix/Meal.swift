@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Meal {
+public class Meal {
     // MARK: Properties
     var name: String
     var photo: UIImage?
@@ -16,7 +16,7 @@ class Meal {
     
     // MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    public init?(name: String, photo: UIImage?, rating: Int) {
         // Initialize stored properties.
         self.name = name
         self.photo = photo
