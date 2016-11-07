@@ -75,12 +75,13 @@ class MealTableViewController: UITableViewController {
         return cell
     }
 
-    
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+ */
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -121,6 +122,7 @@ class MealTableViewController: UITableViewController {
                     // Get the cell that generated this segue.
                     if let selectedMealCell = sender as? MealTableViewCell{
                         
+                        //if let?
                         let indexPath = tableView.indexPath(for: selectedMealCell)!
                         
                         let selectedMeal = meals[indexPath.row]
@@ -164,8 +166,7 @@ class MealTableViewController: UITableViewController {
     }
     
     func loadMeals() -> [Meal]? {
-        return NSKeyedArchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
-        
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
     }
     
 }
