@@ -1,6 +1,6 @@
 //
 //  RatingControl.swift
-//  ColorMix
+//  ColorMix/FoodTracker
 //
 //  Created by Scott Blackwell on 2016-11-05.
 //  Copyright © 2016 Scott Blackwell. All rights reserved.
