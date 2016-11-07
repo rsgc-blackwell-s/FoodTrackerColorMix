@@ -10,7 +10,7 @@ import UIKit
 
 class MealTableViewCell: UITableViewCell {
     
-    // MARK: Properties
+// MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
@@ -25,5 +25,4 @@ class MealTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

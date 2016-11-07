@@ -9,23 +9,26 @@
 import UIKit
 
 public class Meal: NSObject, NSCoding {
-    // MARK: Properties
+// MARK: Properties
+    
     var name: String
     var photo: UIImage?
     var rating: Int
     
-    // MARK: Archiving Paths
+// MARK: Archiving Paths
+    
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     static let ArchiveURL = DocumentsDirectory[0].appendingPathComponent("meals")
     
-    // MARK: Types
+// MARK: Types
+    
     struct PropertyKey {
         static let nameKey = "name"
         static let photoKey = "photo"
         static let ratingKey = "rating"
     }
     
-    // MARK: Initialization
+// MARK: Initialization
     
     public init?(name: String, photo: UIImage?, rating: Int) {
         // Initialize stored properties.
@@ -41,7 +44,7 @@ public class Meal: NSObject, NSCoding {
         }
     }
     
-    // MARK: NSCoding
+// MARK: NSCoding
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.nameKey)
         aCoder.encode(photo, forKey: PropertyKey.photoKey)
@@ -59,6 +62,4 @@ public class Meal: NSObject, NSCoding {
         // Must call designated initializer.
         self.init(name: name, photo: photo, rating: rating)
     }
-    
 }
-

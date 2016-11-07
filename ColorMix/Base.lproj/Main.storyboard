@@ -100,8 +100,12 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="W9m-ea-dx8" secondAttribute="trailing" constant="51" id="ZYu-rk-Ip4"/>
                                     <constraint firstAttribute="trailing" secondItem="u9v-HL-03v" secondAttribute="trailing" id="bbO-Dp-grm"/>
+                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" constant="51" id="goU-4i-x6t"/>
                                     <constraint firstItem="u9v-HL-03v" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" id="hBK-Vb-96W"/>
+                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" constant="51" id="hg3-Os-TSb"/>
+                                    <constraint firstAttribute="trailing" secondItem="W9m-ea-dx8" secondAttribute="trailing" constant="51" id="uKm-TG-k94"/>
                                 </constraints>
                             </stackView>
                         </subviews>

@@ -10,19 +10,19 @@ import UIKit
 
 class RatingControl: UIView {
     
-    // MARK: Properties
+// MARK: Properties
     
     var rating = 0 {
         didSet {
             setNeedsLayout()
         }
     }
+    
     var ratingButtons = [UIButton]()
     let spacing = 5
     let starCount = 5
     
-    
-    // MARK: Initialization
+// MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,8 +42,6 @@ class RatingControl: UIView {
         button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchDown)
         ratingButtons += [button]
         addSubview(button)
-            
-            
         }
     }
     
@@ -57,20 +55,21 @@ class RatingControl: UIView {
             buttonFrame.origin.x = CGFloat(index * (buttonSize + spacing))
             button.frame = buttonFrame
         }
+        
         updateButtonSelectionStates()
+        
     }
     
     // NOTE: intrinsicSize is now a computed property
     override public var intrinsicContentSize: CGSize {
             let buttonSize = Int(frame.size.height)
-            //let width = (buttonSize * starCount) + (spacing * (starCount - 1))
             let width = (buttonSize + spacing) * starCount
         
         // Return the intrinsic content size for the stack view so it knows how to layout the button
             return CGSize (width: width, height: 44)
     }
     
-    // MARK: Button Action
+// MARK: Button Action
     func ratingButtonTapped (button: UIButton){
         print ("Button pressed 👍")
         rating = ratingButtons.index(of: button)! + 1

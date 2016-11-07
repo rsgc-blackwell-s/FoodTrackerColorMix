@@ -10,7 +10,8 @@ import UIKit
 
 class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // MARK: Properties
+// MARK: Properties
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
@@ -20,6 +21,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
      This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
      or constructed as part of adding a new meal.
      */
+    
     var meal: Meal?
 
     override func viewDidLoad() {
@@ -44,6 +46,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -67,11 +70,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }
+    
 // MARK: UIImagePickerControllerDelegate
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
         dismiss(animated: true, completion: nil)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -81,8 +87,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
-    }
+   }
+    
 // MARK: Navigation
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
@@ -108,9 +116,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
                 meal = Meal(name: name, photo: photo, rating: rating)
             }
         }
-        
     }
+    
 // MARK: Actions
+    
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
@@ -129,6 +138,4 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         present(imagePickerController, animated: true, completion: nil)
     }
-    
 }
-
