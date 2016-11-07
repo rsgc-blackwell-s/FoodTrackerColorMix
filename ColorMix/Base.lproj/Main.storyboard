@@ -95,17 +95,17 @@
                                             <outletCollection property="gestureRecognizers" destination="vsS-ln-She" appends="YES" id="02m-mP-wn4"/>
                                         </connections>
                                     </imageView>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="W9m-ea-dx8" customClass="RatingControl" customModule="ColorMix" customModuleProvider="target">
+                                    <view contentMode="center" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="W9m-ea-dx8" customClass="RatingControl" customModule="ColorMix" customModuleProvider="target">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="W9m-ea-dx8" secondAttribute="trailing" constant="51" id="ZYu-rk-Ip4"/>
+                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="centerX" secondItem="ANo-9Y-9w1" secondAttribute="centerX" id="QYg-mz-ofu"/>
+                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" constant="51" id="Tzo-mr-GHZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="W9m-ea-dx8" secondAttribute="trailing" constant="51" id="V5E-cf-CCA"/>
                                     <constraint firstAttribute="trailing" secondItem="u9v-HL-03v" secondAttribute="trailing" id="bbO-Dp-grm"/>
-                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" constant="51" id="goU-4i-x6t"/>
+                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="centerX" secondItem="ANo-9Y-9w1" secondAttribute="centerX" id="dDy-vb-hLV"/>
                                     <constraint firstItem="u9v-HL-03v" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" id="hBK-Vb-96W"/>
-                                    <constraint firstItem="W9m-ea-dx8" firstAttribute="leading" secondItem="ANo-9Y-9w1" secondAttribute="leading" constant="51" id="hg3-Os-TSb"/>
-                                    <constraint firstAttribute="trailing" secondItem="W9m-ea-dx8" secondAttribute="trailing" constant="51" id="uKm-TG-k94"/>
                                 </constraints>
                             </stackView>
                         </subviews>
